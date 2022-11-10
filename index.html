@@ -1,10 +1,26 @@
 <html>
     <head><link rel='stylesheet' href='styles.css'> <title>bartender</title> <script src="https://kit.fontawesome.com/106a398e5d.js" crossorigin="anonymous"></script></head>
 <body>
-    <div class="search-box">
-        <button class="btn-search"><i class="fa-solid fa-wine-glass"></i></i></button>
-        <input type="text" class="input-search" placeholder="search for albums!">
-      </div>
     
-    </div> 
-</body>
+   
+    <div class="search-box">
+         <button class="btn-search" ><i class="fa-solid fa-wine-glass"></i></i></button>
+          <a href="searchresults.html"><button id='searchbut' style="display:none ;">   </button></a>
+        <input type="text" class="input-search" placeholder="search for albums!" id="search">
+        <script>
+            var input=document.getElementById('search');
+            input.addEventListener("keypress",function(event){
+                    if (event.key=="Enter"){
+                        event.preventDefault();
+                        document.getElementById("searchbut").click();
+                    }
+                });
+            </script>
+    
+    
+    </div>
+    
+    
+   
+    <div id=foot><footer><p></p></footer> </div>
+    </body>
