@@ -1,2 +1,2 @@
 # bartender
-search engine for your favorite tracks and albums!
+search engine for your favorite artists!
