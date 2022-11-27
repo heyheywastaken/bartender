@@ -12,7 +12,11 @@ search_str = input("Enter an artist: ")
 
 result = sp.search(q = 'artist:' + search_str, type = 'artist')
 url=result['artists']['items'][0]['uri']
-print(url.split(':')[2])
+
+response = sp.artist_top_tracks(url)
+
+for track in response['tracks']:
+    print(track['name'])
 
 
 # uri=url.split('/')
