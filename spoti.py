@@ -8,10 +8,10 @@ clientsec='62ea8892cec54c9ea715df33670a6bba'
 creds=SpotifyClientCredentials(client_id=cid,client_secret=clientsec)
 sp=spotipy.Spotify(client_credentials_manager=creds)
 
-search_str = input("")
+search_str = input("Enter an artist: ")
 
 result = sp.search(q = 'artist:' + search_str, type = 'artist')
-url=print(result['artists']['items'][0]['external_urls']['spotify'])
+url=print(result['artists']['items'][0]['uri'])
 print(type(url))
 
 
