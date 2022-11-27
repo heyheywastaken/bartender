@@ -13,9 +13,9 @@ search_str = input("")
 result = sp.search(q = 'artist:' + search_str, type = 'artist')
 url=print(result['artists']['items'][0]['external_urls']['spotify'])
 print(type(url))
+pprint.pprint(result)
 
 
-#
 # uri=url.split('/')
 # print(uri)
 # response=sp.artist_top_tracks(url)
