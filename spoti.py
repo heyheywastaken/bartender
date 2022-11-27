@@ -11,8 +11,8 @@ sp=spotipy.Spotify(client_credentials_manager=creds)
 search_str = input("Enter an artist: ")
 
 result = sp.search(q = 'artist:' + search_str, type = 'artist')
-url=print(result['artists']['items'][0]['uri'])
-print(type(url))
+url=result['artists']['items'][0]['uri']
+print(url.split(':')[2])
 
 
 # uri=url.split('/')
