@@ -12,12 +12,15 @@ search_str = input("Enter an artist: ")
 
 result = sp.search(q = 'artist:' + search_str, type = 'artist')
 uri=result['artists']['items'][0]['uri']
-name = result['artists']['items'][0]['name']
+items=result['artists']['items']
+name=result['artists']['items'][0]['name']
+response=sp.artist_top_tracks(uri)
 
-response = sp.artist_top_tracks(uri)
-
-for track in response['tracks']:
-    print(track['name'])
+for tracks in response['tracks'][:10]:
+    print(tracks['name'])
+if len (items)>0:
+    artists =items[0]
+    print(artists['images'][0]['url'])
 
 try:
     related = sp.artist_related_artists(uri)
@@ -27,7 +30,3 @@ try:
 except BaseException:
     print("usage show_related.py [artist-name]")
 
-# uri=url.split('/')
-# print(uri)
-# response=sp.artist_top_tracks(url)
-# print(response)
