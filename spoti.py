@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import sys
@@ -14,17 +13,9 @@ search_str = input("")
 result = sp.search(q = 'artist:' + search_str, type = 'artist')
 url=print(result['artists']['items'][0]['external_urls']['spotify'])
 print(type(url))
-pprint.pprint(result)
 
 
 # uri=url.split('/')
 # print(uri)
 # response=sp.artist_top_tracks(url)
-=======
-
-#
-# uri=url.split('/')
-# print(uri)
-# response=sp.artist_top_tracks(url)
->>>>>>> 875f46a0b8157e84284036e5fe222509eb0552f3
 # print(response)
